@@ -1,0 +1,6 @@
+module KaakdiLauncher
+typeinfo appKaakdiLauncher.qmltypes
+prefer :/qt/qml/KaakdiLauncher/
+Main 254.0 Main.qml
+depends QtQuick
+

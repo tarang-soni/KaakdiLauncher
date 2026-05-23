@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/qt/qml/KaakdiLauncher/">
+    <file alias="Main.qml">D:/Dev/Projects/qt/KaakdiLauncher/Main.qml</file>
+  </qresource>
+</RCC>
+
