@@ -1,0 +1,31 @@
+{
+	"BUILD_DIR" : "D:/Dev/Projects/qt/KaakdiLauncher/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/appKaakdiLauncher_autogen",
+	"CMAKE_BINARY_DIR" : "D:/Dev/Projects/qt/KaakdiLauncher/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "D:/Dev/Projects/qt/KaakdiLauncher/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "D:/Dev/Projects/qt/KaakdiLauncher",
+	"CMAKE_SOURCE_DIR" : "D:/Dev/Projects/qt/KaakdiLauncher",
+	"CROSS_CONFIG" : false,
+	"GENERATOR" : "Ninja",
+	"INCLUDE_DIR" : "D:/Dev/Projects/qt/KaakdiLauncher/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/appKaakdiLauncher_autogen/include",
+	"INPUTS" : 
+	[
+		"D:/Dev/Projects/qt/KaakdiLauncher/Images/duck-hunt-logo-vintage-illustration-template-icon-graphic-design-free-vector.jpg",
+		"D:/Dev/Projects/qt/KaakdiLauncher/Images/mariobg.jpg",
+		"D:/Dev/Projects/qt/KaakdiLauncher/Images/wallpaperflare.com_wallpaper.jpg",
+		"D:/Dev/Projects/qt/KaakdiLauncher/Images/vKhstIY.png",
+		"D:/Dev/Projects/qt/KaakdiLauncher/Images/super-mario-3d-world-logo.jpg",
+		"D:/Dev/Projects/qt/KaakdiLauncher/Images/contrabg.jpg",
+		"D:/Dev/Projects/qt/KaakdiLauncher/Images/563-5636826_donkey-kong-logo-png-download-donkey-kong-logo.png"
+	],
+	"LOCK_FILE" : "D:/Dev/Projects/qt/KaakdiLauncher/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/CMakeFiles/appKaakdiLauncher_autogen.dir/AutoRcc_Resources_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "--no-zstd", "-name", "Resources" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_Resources.cpp",
+	"RCC_EXECUTABLE" : "C:/Qt/6.11.0/mingw_64/bin/rcc.exe",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "D:/Dev/Projects/qt/KaakdiLauncher/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/CMakeFiles/appKaakdiLauncher_autogen.dir/AutoRcc_Resources_EWIEGA46WW_Used.txt",
+	"SOURCE" : "D:/Dev/Projects/qt/KaakdiLauncher/Resources.qrc",
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}

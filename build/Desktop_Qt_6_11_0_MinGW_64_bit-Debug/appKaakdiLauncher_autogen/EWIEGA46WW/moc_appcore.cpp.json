@@ -1,0 +1,18 @@
+{
+    "classes": [
+        {
+            "className": "AppCore",
+            "lineNumber": 7,
+            "object": true,
+            "qualifiedClassName": "AppCore",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "appcore.h",
+    "outputRevision": 69
+}

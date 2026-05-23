@@ -1,0 +1,6 @@
+{
+  "platform_id": "N64",
+  "display_name": "Nintendo 64",
+  "core_executable": "mupen64plus_next_libretro.dll",
+  "supported_extensions": [".z64", ".n64", ".v64"]
+}

@@ -1,0 +1,33 @@
+{
+    "classes": [
+        {
+            "className": "LibraryManager",
+            "lineNumber": 9,
+            "object": true,
+            "qualifiedClassName": "LibraryManager",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "doc",
+                            "type": "QJsonDocument"
+                        }
+                    ],
+                    "index": 0,
+                    "lineNumber": 16,
+                    "name": "filesReady",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "librarymanager.h",
+    "outputRevision": 69
+}

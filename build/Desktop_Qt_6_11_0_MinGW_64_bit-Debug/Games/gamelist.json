@@ -1,0 +1,27 @@
+{
+    "systems": [
+        {
+            "games": [
+                {
+                    "bg": "Games/n64/Legend of Zelda, The Ocarina of Time/bg.jpg",
+                    "logo": "Games/n64/Legend of Zelda, The Ocarina of Time/logo.png",
+                    "rom_path": "Games/n64/Legend of Zelda, The Ocarina of Time/rom.z64",
+                    "title": "Legend of Zelda, The Ocarina of Time"
+                },
+                {
+                    "bg": "Games/n64/Pokemon Stadium 2/bg.png",
+                    "logo": "Games/n64/Pokemon Stadium 2/logo.jpeg",
+                    "rom_path": "Games/n64/Pokemon Stadium 2/rom.z64",
+                    "title": "Pokemon Stadium 2"
+                },
+                {
+                    "bg": "Games/n64/Super Mario 64/bg.jpg",
+                    "logo": "Games/n64/Super Mario 64/logo.jpeg",
+                    "rom_path": "Games/n64/Super Mario 64/rom.z64",
+                    "title": "Super Mario 64"
+                }
+            ],
+            "id": "n64"
+        }
+    ]
+}

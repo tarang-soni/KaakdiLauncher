@@ -1,0 +1,16 @@
+-I
+D:/Dev/Projects/qt/KaakdiLauncher/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug
+-I
+D:/Dev/Projects/qt/KaakdiLauncher/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/KaakdiLauncher
+-I
+D:/Dev/Projects/qt/KaakdiLauncher/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug
+-I
+C:/Qt/6.11.0/mingw_64/qml
+--resource
+D:/Dev/Projects/qt/KaakdiLauncher/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/.qt/rcc/qmake_KaakdiLauncher.qrc
+--resource
+D:/Dev/Projects/qt/KaakdiLauncher/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/.qt/rcc/appKaakdiLauncher_raw_qml_0.qrc
+--resource
+D:/Dev/Projects/qt/KaakdiLauncher/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/.qt/rcc/appKaakdiLauncher_raw_res_0.qrc
+--module
+KaakdiLauncher

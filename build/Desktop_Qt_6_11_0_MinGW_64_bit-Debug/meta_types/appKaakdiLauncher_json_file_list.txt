@@ -1,0 +1,3 @@
+D:/Dev/Projects/qt/KaakdiLauncher/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/appKaakdiLauncher_autogen/include/../EWIEGA46WW/moc_appcore.cpp.json
+D:/Dev/Projects/qt/KaakdiLauncher/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/appKaakdiLauncher_autogen/include/../EWIEGA46WW/moc_librarymanager.cpp.json
+D:/Dev/Projects/qt/KaakdiLauncher/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/appKaakdiLauncher_autogen/include/../EWIEGA46WW/moc_uimanager.cpp.json

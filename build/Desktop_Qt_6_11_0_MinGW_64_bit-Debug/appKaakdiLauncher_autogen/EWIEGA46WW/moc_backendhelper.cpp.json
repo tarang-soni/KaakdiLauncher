@@ -1,0 +1,27 @@
+{
+    "classes": [
+        {
+            "className": "BackendHelper",
+            "lineNumber": 7,
+            "methods": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "lineNumber": 12,
+                    "name": "print",
+                    "returnType": "void"
+                }
+            ],
+            "object": true,
+            "qualifiedClassName": "BackendHelper",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "backendhelper.h",
+    "outputRevision": 69
+}
