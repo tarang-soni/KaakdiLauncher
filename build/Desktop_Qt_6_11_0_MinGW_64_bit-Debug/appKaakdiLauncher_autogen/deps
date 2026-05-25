@@ -9,6 +9,7 @@ appKaakdiLauncher_autogen/timestamp: \
 	C:/Qt/6.11.0/mingw_64/include/QtCore/QProcess \
 	C:/Qt/6.11.0/mingw_64/include/QtCore/QSharedPointer \
 	C:/Qt/6.11.0/mingw_64/include/QtCore/QString \
+	C:/Qt/6.11.0/mingw_64/include/QtCore/QStringList \
 	C:/Qt/6.11.0/mingw_64/include/QtCore/q17memory.h \
 	C:/Qt/6.11.0/mingw_64/include/QtCore/q20bit.h \
 	C:/Qt/6.11.0/mingw_64/include/QtCore/q20functional.h \
@@ -845,6 +846,15 @@ appKaakdiLauncher_autogen/timestamp: \
 	C:/Qt/6.11.0/mingw_64/lib/cmake/Qt6TaskTree/Qt6TaskTreeTargets.cmake \
 	C:/Qt/6.11.0/mingw_64/lib/cmake/Qt6TaskTree/Qt6TaskTreeTargetsPrecheck.cmake \
 	C:/Qt/6.11.0/mingw_64/lib/cmake/Qt6TaskTree/Qt6TaskTreeVersionlessAliasTargets.cmake \
+	C:/Qt/6.11.0/mingw_64/lib/cmake/Qt6Xml/Qt6XmlAdditionalTargetInfo.cmake \
+	C:/Qt/6.11.0/mingw_64/lib/cmake/Qt6Xml/Qt6XmlConfig.cmake \
+	C:/Qt/6.11.0/mingw_64/lib/cmake/Qt6Xml/Qt6XmlConfigVersion.cmake \
+	C:/Qt/6.11.0/mingw_64/lib/cmake/Qt6Xml/Qt6XmlConfigVersionImpl.cmake \
+	C:/Qt/6.11.0/mingw_64/lib/cmake/Qt6Xml/Qt6XmlDependencies.cmake \
+	C:/Qt/6.11.0/mingw_64/lib/cmake/Qt6Xml/Qt6XmlTargets-relwithdebinfo.cmake \
+	C:/Qt/6.11.0/mingw_64/lib/cmake/Qt6Xml/Qt6XmlTargets.cmake \
+	C:/Qt/6.11.0/mingw_64/lib/cmake/Qt6Xml/Qt6XmlTargetsPrecheck.cmake \
+	C:/Qt/6.11.0/mingw_64/lib/cmake/Qt6Xml/Qt6XmlVersionlessAliasTargets.cmake \
 	C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeCXXInformation.cmake \
 	C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake \
 	C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake \

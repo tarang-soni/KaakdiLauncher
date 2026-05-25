@@ -1,6 +1,11 @@
 <RCC>
   <qresource prefix="/qt/qml/KaakdiLauncher/">
     <file alias="Main.qml">D:/Dev/Projects/qt/KaakdiLauncher/Main.qml</file>
+    <file alias="ArcadeFrame.qml">D:/Dev/Projects/qt/KaakdiLauncher/ArcadeFrame.qml</file>
+    <file alias="SplashScreen.qml">D:/Dev/Projects/qt/KaakdiLauncher/SplashScreen.qml</file>
+    <file alias="CarouselDelegate.qml">D:/Dev/Projects/qt/KaakdiLauncher/CarouselDelegate.qml</file>
+    <file alias="GameCarousel.qml">D:/Dev/Projects/qt/KaakdiLauncher/GameCarousel.qml</file>
+    <file alias="TopNavBar.qml">D:/Dev/Projects/qt/KaakdiLauncher/TopNavBar.qml</file>
   </qresource>
 </RCC>
 

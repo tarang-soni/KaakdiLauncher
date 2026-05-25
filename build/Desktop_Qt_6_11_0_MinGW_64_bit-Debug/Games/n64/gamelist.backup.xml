@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<gameList>
+  <provider>
+    <System>Nintendo 64</System>
+    <software>Skraper</software>
+    <database>ScreenScraper.fr</database>
+    <web>http://www.screenscraper.fr</web>
+  </provider>
+  <game id="5408" source="ScreenScraper.fr">
+    <path>./Pokemon Stadium 2.z64</path>
+    <name>Pokémon Stadium 2</name>
+    <desc>Hundreds of Pokémon in Three-mendous 3-D! What's sweeter than victory in a Pokémon battle! Victory in a 3-D arena on the N64?! Set your strategy and stand back while your Pokémon battle it out. You can even set the Pokémon you've trained--fully rendered in 3-D and ready for battle!</desc>
+    <rating>0.75</rating>
+    <releasedate>20010325T000000</releasedate>
+    <developer>HAL Laboratory</developer>
+    <publisher>Nintendo</publisher>
+    <genre>Fighting-Strategy</genre>
+    <players>1-4</players>
+    <hash>A9998E09</hash>
+    <image>./media/images/Pokemon Stadium 2.png</image>
+    <thumbnail>./media/wheel/Pokemon Stadium 2.png</thumbnail>
+    <genreid>262</genreid>
+  </game>
+  <game id="5396" source="ScreenScraper.fr">
+    <path>./Super Mario 64.z64</path>
+    <name>Super Mario 64</name>
+    <desc>Mario is super in a whole new way! Combining the finest 3-D graphics ever developed for a video game and an explosive sound track, Super Mario 64 becomes a new standard for video games. It's packed with bruising battles, daunting obstacle courses and underwater adventures. Retrieve the Power Stars from their hidden locations and confront your arch nemesis - Bowser, King of the Koopas!</desc>
+    <rating>0.95</rating>
+    <releasedate>19960926T000000</releasedate>
+    <developer>Nintendo</developer>
+    <publisher>Nintendo</publisher>
+    <genre>Action-Action / Adventure</genre>
+    <players>1</players>
+    <hash>3CE60709</hash>
+    <image>./media/images/Super Mario 64.png</image>
+    <thumbnail>./media/wheel/Super Mario 64.png</thumbnail>
+    <genreid>256</genreid>
+  </game>
+  <game id="5395" source="ScreenScraper.fr">
+    <path>./Legend of Zelda, The Ocarina of Time.z64</path>
+    <name>The Legend of Zelda : Ocarina of Time</name>
+    <desc>The story follows Link, a boy raised among the Kokiri in the forest village of Hyrule. Summoned by the guardian spirit, the Great Deku Tree, Link learns of an impending danger: Ganondorf, leader of the Gerudo, seeks the Triforce, a sacred relic that grants godlike power. With the aid of Princess Zelda and his fairy companion Navi, Link embarks on a quest to secure the three Spiritual Stones and open the path to the Sacred Realm before Ganondorf can seize control of Hyrule. The adventure spans both Link's childhood and adulthood, with time itself becoming central to his mission.</desc>
+    <rating>0.95</rating>
+    <releasedate>19981123T000000</releasedate>
+    <developer>Nintendo</developer>
+    <publisher>Nintendo</publisher>
+    <genre>Role Playing Game</genre>
+    <players>1</players>
+    <hash>32120C23</hash>
+    <image>./media/images/Legend of Zelda, The Ocarina of Time.png</image>
+    <thumbnail>./media/wheel/Legend of Zelda, The Ocarina of Time.png</thumbnail>
+    <genreid>768</genreid>
+  </game>
+</gameList>

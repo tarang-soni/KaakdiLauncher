@@ -9,13 +9,8 @@
 	"INCLUDE_DIR" : "D:/Dev/Projects/qt/KaakdiLauncher/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/appKaakdiLauncher_autogen/include",
 	"INPUTS" : 
 	[
-		"D:/Dev/Projects/qt/KaakdiLauncher/Images/duck-hunt-logo-vintage-illustration-template-icon-graphic-design-free-vector.jpg",
-		"D:/Dev/Projects/qt/KaakdiLauncher/Images/mariobg.jpg",
 		"D:/Dev/Projects/qt/KaakdiLauncher/Images/wallpaperflare.com_wallpaper.jpg",
-		"D:/Dev/Projects/qt/KaakdiLauncher/Images/vKhstIY.png",
-		"D:/Dev/Projects/qt/KaakdiLauncher/Images/super-mario-3d-world-logo.jpg",
-		"D:/Dev/Projects/qt/KaakdiLauncher/Images/contrabg.jpg",
-		"D:/Dev/Projects/qt/KaakdiLauncher/Images/563-5636826_donkey-kong-logo-png-download-donkey-kong-logo.png"
+		"D:/Dev/Projects/qt/KaakdiLauncher/Images/logo.png"
 	],
 	"LOCK_FILE" : "D:/Dev/Projects/qt/KaakdiLauncher/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/CMakeFiles/appKaakdiLauncher_autogen.dir/AutoRcc_Resources_EWIEGA46WW_Lock.lock",
 	"MULTI_CONFIG" : false,

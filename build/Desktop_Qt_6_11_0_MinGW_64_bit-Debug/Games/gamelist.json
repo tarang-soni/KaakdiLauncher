@@ -3,25 +3,58 @@
         {
             "games": [
                 {
-                    "bg": "Games/n64/Legend of Zelda, The Ocarina of Time/bg.jpg",
-                    "logo": "Games/n64/Legend of Zelda, The Ocarina of Time/logo.png",
-                    "rom_path": "Games/n64/Legend of Zelda, The Ocarina of Time/rom.z64",
-                    "title": "Legend of Zelda, The Ocarina of Time"
+                    "bg": "Games/gba/media/images/Pokemon - Emerald Version (USA, Europe).png",
+                    "logo": "Games/gba/media/wheel/Pokemon - Emerald Version (USA, Europe).png",
+                    "rom_path": "Games/gba/Pokemon - Emerald Version (USA, Europe).gba",
+                    "title": "Pokémon Emerald Version"
                 },
                 {
-                    "bg": "Games/n64/Pokemon Stadium 2/bg.png",
-                    "logo": "Games/n64/Pokemon Stadium 2/logo.jpeg",
-                    "rom_path": "Games/n64/Pokemon Stadium 2/rom.z64",
-                    "title": "Pokemon Stadium 2"
+                    "bg": "Games/gba/media/images/Pokemon - FireRed Version (USA, Europe) (Rev 1).png",
+                    "logo": "Games/gba/media/wheel/Pokemon - FireRed Version (USA, Europe) (Rev 1).png",
+                    "rom_path": "Games/gba/Pokemon - FireRed Version (USA, Europe) (Rev 1).gba",
+                    "title": "Pokémon FireRed Version"
+                }
+            ],
+            "id": "gba"
+        },
+        {
+            "games": [
+                {
+                    "bg": "Games/n64/media/images/Pokemon Stadium 2.png",
+                    "logo": "Games/n64/media/wheel/Pokemon Stadium 2.png",
+                    "rom_path": "Games/n64/Pokemon Stadium 2.z64",
+                    "title": "Pokémon Stadium 2"
                 },
                 {
-                    "bg": "Games/n64/Super Mario 64/bg.jpg",
-                    "logo": "Games/n64/Super Mario 64/logo.jpeg",
-                    "rom_path": "Games/n64/Super Mario 64/rom.z64",
+                    "bg": "Games/n64/media/images/Super Mario 64.png",
+                    "logo": "Games/n64/media/wheel/Super Mario 64.png",
+                    "rom_path": "Games/n64/Super Mario 64.z64",
                     "title": "Super Mario 64"
+                },
+                {
+                    "bg": "Games/n64/media/images/Legend of Zelda, The Ocarina of Time.png",
+                    "logo": "Games/n64/media/wheel/Legend of Zelda, The Ocarina of Time.png",
+                    "rom_path": "Games/n64/Legend of Zelda, The Ocarina of Time.z64",
+                    "title": "The Legend of Zelda : Ocarina of Time"
                 }
             ],
             "id": "n64"
+        },
+        {
+            "games": [
+            ],
+            "id": "sega"
+        },
+        {
+            "games": [
+                {
+                    "bg": "Games/snes/media/images/Street Fighter 5 (Hack).png",
+                    "logo": "Games/snes/media/wheel/Street Fighter 5 (Hack).png",
+                    "rom_path": "Games/snes/Street Fighter 5 (Hack).smc",
+                    "title": "Street Fighter 2"
+                }
+            ],
+            "id": "snes"
         }
     ]
 }

@@ -6,7 +6,7 @@
 #include <QJsonObject>
 #include<QJsonArray>
 #include<QJsonDocument>
-
+#include<QtXml/QDomDocument>
 LibraryManager::LibraryManager(QObject *parent)
     : QObject{parent}
 {
@@ -45,54 +45,125 @@ void LibraryManager::initCores(QMap<QString, QList<GameFileObj> > &dict, const Q
         }
     }
 }
-
 void LibraryManager::populateGames(QMap<QString, QList<GameFileObj> > &dict, const QString& path)
 {
     QString gamePath = QDir(path).filePath("Games");
+    QString mediaPath = QDir(path).filePath("media");
     QDirIterator gameDirIterator(gamePath,QDir::Dirs|QDir::NoDotAndDotDot,QDirIterator::NoIteratorFlags);//get games
-
-    QDir baseDir(path);
+    QStringList filters;
+    QString filterPath = QDir(path).filePath("Games\\filters.txt");
+    QFile filterFile(filterPath);
+    if(!filterFile.open(QIODevice::ReadOnly))
+    {
+        qWarning() << "Failed to open file";
+        return;
+    }
+    QByteArray filterData = filterFile.readAll();
+    filters = QString::fromUtf8(filterData).split('\n',Qt::SkipEmptyParts);
+    QStringList xmlPaths;
     while(gameDirIterator.hasNext())
     {
-        gameDirIterator.next();
-        QString emuPath = gameDirIterator.filePath();
+        QString emu = gameDirIterator.next();
+        QString emuPath = QDir(gamePath).filePath(emu);
+        QDir emuDir(emuPath);
 
+        emuDir.setNameFilters(filters);
         QString emuName = emuPath.section('/',-1);
+        QString xmlPath = QDir(gamePath).filePath(emuName+"/gamelist.xml");
         if(dict.contains(emuName))
         {
-            QList<GameFileObj>& refList = dict[emuName];
-            QDirIterator gamedirs(emuPath,QDir::Dirs|QDir::NoDotAndDotDot,QDirIterator::NoIteratorFlags);//populate map list
+            QList<GameFileObj> gameList;
+            dict[emuName]=gameList;
+            parseGamesList(xmlPath,dict[emuName],emuName);
 
-            while(gamedirs.hasNext())
+        }
+
+    }
+
+}
+
+void LibraryManager::parseGamesList(const QString &xmlPath, QList<GameFileObj> &games,const QString& emuName)
+{
+    QDomDocument doc;
+    QFile file(xmlPath);
+    if(!file.open(QIODevice::ReadOnly | QIODevice::Text))
+    {
+        qWarning() << "Could not open gamelist.xml at:" << xmlPath;
+        return;
+    }
+    if(!doc.setContent(&file))
+    {
+        qWarning() << "Failed to parse XML content.";
+        file.close();
+        return;
+    }
+    file.close();
+
+    QDomNodeList gameNodes = doc.elementsByTagName("game");
+    for (int i = 0; i < gameNodes.count(); ++i) {
+        QDomNode gameNode = gameNodes.at(i);
+        if(gameNode.isElement())
+        {
+            GameFileObj gameObj;
+            QDomNode childNode = gameNode.firstChild();
+            while(!childNode.isNull())
             {
-                QDir gameDir(gamedirs.next());
-                GameFileObj obj = GameFileObj();
-                QString targetBaseName = "bg";
-                obj.name=gameDir.dirName();
-                for(QFileInfo& file:gameDir.entryInfoList(QDir::Files))
+                if(childNode.isElement())
                 {
-                    if(file.baseName() == "bg")
+                    QDomElement element = childNode.toElement();
+                    QString tagName = element.tagName();
+                    QString textData = element.text();
+                    if(textData.startsWith("./"))
                     {
-                        obj.bgPath =baseDir.relativeFilePath( file.filePath());
+                        textData.replace(0,2,"Games/"+emuName+"/");
                     }
-                    else if(file.baseName() == "logo")
+                    if(tagName == "path")
                     {
-                        obj.logoPath =baseDir.relativeFilePath( file.filePath());
+                        gameObj.romPath = textData;
                     }
-                    else if(file.baseName() == "rom")
+                    else if(tagName == "name")
                     {
-                        obj.romPath = baseDir.relativeFilePath( file.filePath());
+                        gameObj.name = textData;
+                    }
+                    else if(tagName == "desc")
+                    {
+                        gameObj.desc = textData;
+                    }
+                    else if(tagName == "rating")
+                    {
+                        gameObj.rating = textData.toFloat();
+                    }
+                    else if(tagName == "developer")
+                    {
+                        gameObj.developerName = textData;
+                    }
+                    else if(tagName == "publisher")
+                    {
+                        gameObj.pubName = textData;
+                    }
+                    else if(tagName == "genre")
+                    {
+                        QStringList a = textData.split("-");
+                        gameObj.genre = a;
+                    }
+                    else if(tagName == "players")
+                    {
+                        gameObj.playerCount = textData;
+                    }
+                    else if(tagName == "image")
+                    {
+                        gameObj.bgPath = textData;
+                    }
+                    else if(tagName == "thumbnail")
+                    {
+                        gameObj.logoPath = textData;
                     }
                 }
-                refList.append(obj);
-                qInfo()<<gamedirs.filePath().section('/',-1);
+                childNode = childNode.nextSibling();
             }
-        }
-        else{
-            qWarning()<<"Emulator not found: "+emuName;
-            continue;
-        }
+            games.append(gameObj);
 
+        }
     }
 }
 

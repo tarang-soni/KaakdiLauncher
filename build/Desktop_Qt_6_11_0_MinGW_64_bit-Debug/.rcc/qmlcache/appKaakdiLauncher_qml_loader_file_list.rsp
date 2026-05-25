@@ -5,3 +5,8 @@ D:/Dev/Projects/qt/KaakdiLauncher/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/.qt
 --resource
 D:/Dev/Projects/qt/KaakdiLauncher/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/.qt/rcc/appKaakdiLauncher_raw_res_0.qrc
 /qt/qml/KaakdiLauncher/Main.qml
+/qt/qml/KaakdiLauncher/ArcadeFrame.qml
+/qt/qml/KaakdiLauncher/SplashScreen.qml
+/qt/qml/KaakdiLauncher/CarouselDelegate.qml
+/qt/qml/KaakdiLauncher/GameCarousel.qml
+/qt/qml/KaakdiLauncher/TopNavBar.qml

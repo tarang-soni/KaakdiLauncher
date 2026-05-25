@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<gameList>
+  <provider>
+    <System>Super Nintendo</System>
+    <software>Skraper</software>
+    <database>ScreenScraper.fr</database>
+    <web>http://www.screenscraper.fr</web>
+  </provider>
+  <game id="2162" source="ScreenScraper.fr">
+    <path>./Street Fighter 5 (Hack).smc</path>
+    <name>Street Fighter 2</name>
+    <desc>Street Fighter II is a fighting game. Players select from one of eight characters: Ryu, Ken, Blanka, E. Honda, Zangief, Chun Li, Guile and Dhalsim to do battle with. They must then use their combat strengths to defeat the other seven fighters followed by four boss characters: M. Bison, Vega, Sagat and Balrog. Each character represents a certain country and has his or her own reasons for wanting to win against the others. 
+ 
+Each character has his or her own selection of basic fighting techniques based on three styles of punches and three styles of kicks. The effect of each of these changes depends on the characters orientation (ducking, airborne or standing still). Street Fighter II has a "button combination" style of gameplay used to unleash powerful moves specific to each character. These include the ability to project fireballs, channel electricity or capture the opponent in a tight suplex.</desc>
+    <rating>0.8</rating>
+    <releasedate>19920610T000000</releasedate>
+    <developer>Capcom</developer>
+    <publisher>Capcom</publisher>
+    <genre>Fighting</genre>
+    <players>1-2</players>
+    <hash>37F846DA</hash>
+    <image>./media/images/Street Fighter 5 (Hack).png</image>
+    <thumbnail>./media/wheel/Street Fighter 5 (Hack).png</thumbnail>
+    <genreid>262</genreid>
+  </game>
+</gameList>

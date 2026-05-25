@@ -17,6 +17,7 @@ signals:
 private:
     void initCores(QMap<QString, QList<GameFileObj>>&dict,const QString& path);
     void populateGames(QMap<QString, QList<GameFileObj>>&dict,const QString& path);
+    void parseGamesList(const QString& xmlPath,QList<GameFileObj>&games,const QString& emuName);
     void createJson(QMap<QString, QList<GameFileObj>>&dict,const QString& path);
 
     bool jsonExists() const;

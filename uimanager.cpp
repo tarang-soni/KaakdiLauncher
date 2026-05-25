@@ -16,15 +16,41 @@ void UIManager::print()
 void UIManager::playGame(QString data)
 {
     QString basePath = QCoreApplication::applicationDirPath();
-    QString corePath = QDir(basePath).filePath("Cores/n64/mupen64plus_next_libretro.dll");
-    qDebug()<<corePath;
+    QFileInfo fileInfo(data);
+    QString folderName = fileInfo.dir().dirName();
+
+    QString corePath = QDir(basePath).filePath("Cores/" + folderName);
+
+    QDir coreDir(corePath);
+
+    QStringList filters;
+    filters << "*.dll";
+    coreDir.setNameFilters(filters);
+    coreDir.setFilter(QDir::Files);
+
+    QStringList dllFiles = coreDir.entryList();
+    QString fullCorePath = "";
+
+    if(!dllFiles.isEmpty())
+    {
+        QString coreFileName = dllFiles.first();
+        fullCorePath = coreDir.filePath(coreFileName);
+    }
+    else {
+        qWarning() << "Could not find a .dll file in" << corePath;
+        return;
+    }
+
+    qDebug() << "Launching Core:" << fullCorePath;
 
     QString gamePath = data;
-         qDebug()<<gamePath;
+    qDebug() << "Launching Game:" << gamePath;
+
     QStringList arguments;
-     arguments << "-f"
-               << "-L" << corePath
-              << gamePath;
+    arguments << "-f"                     // Fullscreen
+              << "-L" << fullCorePath     // Load Core
+              << gamePath;                // Load Game
+
     QProcess::startDetached(retroarchPath, arguments);
 }
 
@@ -66,8 +92,17 @@ void UIManager::initCarousel(QJsonDocument doc)
         qWarning() << "No systems found in the JSON!";
         return;
     }
+    //QVariantList gamesList = firstSystemMap["games"].toList();
+
+    QVariantList gamesList;
     QVariantMap firstSystemMap = systemsList.first().toMap();
-    QVariantList gamesList = firstSystemMap["games"].toList();
+    for (int i = 0; i < systemsList.count(); ++i) {
+        QVariantMap qMap = systemsList.at(i).toMap();
+        gamesList.append(qMap["games"].toList());
+    }
+
+
+
     setcurrentGamesList(gamesList);
     qInfo() << "Successfully loaded" << gamesList.count() << "games into the carousel!";
 }

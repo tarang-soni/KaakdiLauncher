@@ -12,6 +12,41 @@ namespace _qt_qml_KaakdiLauncher_Main_qml {
         reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
     };
 }
+namespace _qt_qml_KaakdiLauncher_ArcadeFrame_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
+namespace _qt_qml_KaakdiLauncher_SplashScreen_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
+namespace _qt_qml_KaakdiLauncher_CarouselDelegate_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
+namespace _qt_qml_KaakdiLauncher_GameCarousel_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
+namespace _qt_qml_KaakdiLauncher_TopNavBar_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
 
 }
 namespace {
@@ -27,6 +62,11 @@ Q_GLOBAL_STATIC(Registry, unitRegistry)
 
 Registry::Registry() {
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/KaakdiLauncher/Main.qml"), &QmlCacheGeneratedCode::_qt_qml_KaakdiLauncher_Main_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/KaakdiLauncher/ArcadeFrame.qml"), &QmlCacheGeneratedCode::_qt_qml_KaakdiLauncher_ArcadeFrame_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/KaakdiLauncher/SplashScreen.qml"), &QmlCacheGeneratedCode::_qt_qml_KaakdiLauncher_SplashScreen_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/KaakdiLauncher/CarouselDelegate.qml"), &QmlCacheGeneratedCode::_qt_qml_KaakdiLauncher_CarouselDelegate_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/KaakdiLauncher/GameCarousel.qml"), &QmlCacheGeneratedCode::_qt_qml_KaakdiLauncher_GameCarousel_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/KaakdiLauncher/TopNavBar.qml"), &QmlCacheGeneratedCode::_qt_qml_KaakdiLauncher_TopNavBar_qml::unit);
     QQmlPrivate::RegisterQmlUnitCacheHook registration;
     registration.structVersion = 0;
     registration.lookupCachedQmlUnit = &lookupCachedUnit;
