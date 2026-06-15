@@ -4,21 +4,11 @@ import QtQuick.Effects
 Item {
     id: delegateRoot
     property string gameLogo: ""
-    property bool isSelected: ListView.isCurrentItem
+    property bool isSelected
     signal clicked()
-    implicitWidth: isSelected ? 150 : 100
-    implicitHeight: isSelected ? 150 : 100
+    implicitWidth: 100
+    implicitHeight: 100
 
-    Behavior on implicitWidth {
-        NumberAnimation {
-            duration: 200
-        }
-    }
-    Behavior on implicitHeight {
-        NumberAnimation {
-            duration: 200
-        }
-    }
     Rectangle {
         id: maskShape
         anchors.fill: parent
@@ -59,22 +49,9 @@ Item {
             }
         }
     }
-    // onIsSelectedChanged: {
-    //     if (isSelected) {
-    //             oldImageUrl = currImageUrl;
-    //             currImageUrl = gameBg;
-    //             crossFadeAnim.start();
-
-    //             gameName = gameTitle;
-    //             gameDataPath = gameRomPath;
-    //         }
-    // }
 
     MouseArea {
         anchors.fill: parent
-        // onClicked: {
-        //     gameCarousel.currentIndex = index;
-        // }
         onClicked: delegateRoot.clicked()
     }
 }

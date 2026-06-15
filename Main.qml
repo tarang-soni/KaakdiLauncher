@@ -114,7 +114,7 @@ Window {
                 gameModel:UIManager.currentGamesList
                 gameName:gameName
                 onUpdateTimer:(gameObj)=>{
-                    //console.log("Game name from main:"+gameObj.title);
+
                     bgUpdateTimer.pendingGameObj=gameObj;
                     bgUpdateTimer.restart();
                 }
@@ -123,18 +123,52 @@ Window {
                 }
             }
         }
+        Component{
+            id:gridFrameComponent
+            GridFrame{
+
+                onGameSelected:(gameObj)=>{
+
+                                   bgUpdateTimer.pendingGameObj=gameObj;
+                                   bgUpdateTimer.restart();
+                               }
+            }
+        }
+
+        InfoPopup{
+           id:infoPopup
+        }
+
+        SearchPopup{
+            id:searchPopup
+            z:10
+        }
 
         ColumnLayout {
             anchors.fill: parent
             TopNavBar{
                 Layout.fillWidth: true
                 Layout.preferredHeight: 100
+                onGridMenuButton: {
+                    mainStack.replaceCurrentItem(gridFrameComponent)
+                }
+                onHomeButton: {
+                    mainStack.replaceCurrentItem(arcadePanelComponent)
+                }
+
+                onSettingsButton:{
+                   infoPopup.open()
+                }
+                onSearchButton: {
+                    searchPopup.open()
+                }
             }
             StackView{
                 id:mainStack
                 Layout.fillWidth: true
                 Layout.fillHeight: true
                 initialItem: arcadePanelComponent
+
             }
 
         }

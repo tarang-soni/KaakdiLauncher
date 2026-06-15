@@ -1,32 +1,45 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
+
 RowLayout {
-    id:menuRoot
+    id: menuRoot
+    signal homeButton();
+    signal gridMenuButton();
+    signal settingsButton();
+    signal searchButton();
+    ButtonGroup{
+        id:navGroup
+    }
+
     RowLayout {
 
         Layout.preferredHeight: 100
         spacing: 20
-        Button {
+        NavButtonDelegate {
+            id:homeBtn
             Layout.preferredWidth: 50
             Layout.preferredHeight: 50
-            background: Rectangle {
-                color: "red"
-            }
+            onMenuSelected:homeButton()
+            ButtonGroup.group: navGroup
+            checked:true
+            iconPath:"qrc:/Images/icons8-home-page-64.png"
         }
-        Button {
+        NavButtonDelegate {
+            id:gridBtn
             Layout.preferredWidth: 50
             Layout.preferredHeight: 50
-            background: Rectangle {
-                color: "red"
-            }
+            ButtonGroup.group: navGroup
+            onMenuSelected:gridMenuButton()
+            iconPath:"qrc:/Images/icons8-grid-90.png"
         }
-        Button {
+        NavButtonDelegate {
+            id:searchBtn
             Layout.preferredWidth: 50
             Layout.preferredHeight: 50
-            background: Rectangle {
-                color: "red"
-            }
+            onMenuSelected: searchButton()
+            isGroupButton: false
+            iconPath:"qrc:/Images/icons8-search-64.png"
         }
     }
     Item {
@@ -38,26 +51,22 @@ RowLayout {
         Layout.preferredHeight: 100
         spacing: 20
         layoutDirection: Qt.RightToLeft
-        Button {
+
+        NavButtonDelegate {
+            id:powerBtn
             Layout.preferredWidth: 50
             Layout.preferredHeight: 50
-            background: Rectangle {
-                color: "red"
-            }
+            ButtonGroup.group: navGroup
+            iconPath:"qrc:/Images/icons8-power-off-button-64.png"
         }
-        Button {
+        NavButtonDelegate {
+            id:settingsBtn
             Layout.preferredWidth: 50
             Layout.preferredHeight: 50
-            background: Rectangle {
-                color: "red"
-            }
+            ButtonGroup.group: navGroup
+            iconPath:"qrc:/Images/icons8-settings-64.png"
+            onMenuSelected:settingsButton()
         }
-        Button {
-            Layout.preferredWidth: 50
-            Layout.preferredHeight: 50
-            background: Rectangle {
-                color: "red"
-            }
-        }
+
     }
 }

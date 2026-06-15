@@ -26,6 +26,10 @@ qt_add_qml_module(appKaakdiLauncher
         QML_FILES CarouselDelegate.qml
         QML_FILES GameCarousel.qml
         QML_FILES TopNavBar.qml
+        QML_FILES NavButtonDelegate.qml
+        QML_FILES GridFrame.qml
+        QML_FILES InfoPopup.qml
+        QML_FILES SearchPopup.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
