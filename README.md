@@ -13,20 +13,10 @@
 
 ## 📸 Screenshots
 
-<!-- 
-  TODO: Add screenshots here! Suggested shots:
-  1. The splash screen with spinning logo (SplashScreen.qml) 
-  2. Main arcade carousel view showing games (ArcadeFrame.qml)
-  3. Grid view browsing games (GridFrame.qml)
-  4. Search overlay animation (SearchPopup.qml)
-  5. Game launched in RetroArch with fullscreen gameplay
-  
-  Format:
-  <img src="screenshots/splash.png" width="800" alt="Splash Screen"/>
-  <img src="screenshots/carousel.png" width="800" alt="Arcade Carousel"/>
--->
-
-*[placeholder for screenshots — see suggestions at the bottom of this README]*
+<img src="screenshots/01-splash.png" width="800" alt="Splash Screen"/>
+<img src="screenshots/02-carousel.png" width="800" alt="Arcade Carousel"/>
+<img src="screenshots/03-grid.png" width="800" alt="Grid View"/>
+<img src="screenshots/04-search.png" width="800" alt="Search Overlay"/>
 
 ---
 
@@ -371,31 +361,13 @@ This project is licensed under the MIT License — see [LICENSE](LICENSE) for de
 
 ## 👤 Author
 
-**[Your Name]**
+**Tarang Soni**
 
-- GitHub: [@your-username](https://github.com/your-username)
-- [Add other links: website, Twitter, etc.]
+- GitHub: [@tarang-soni](https://github.com/tarang-soni)
 
 ---
 
-## 📸 Screenshot Suggestions
 
-To complete the README, capture these screenshots and place them in a `screenshots/` folder:
-
-| # | What to capture | File | Details |
-|---|----------------|------|---------|
-| 1 | **Splash screen** | `screenshots/01-splash.png` | The white screen with spinning logo animation |
-| 2 | **Arcade carousel** | `screenshots/02-carousel.png` | Main view with carousel, game title, and "Play Game" button over crossfaded background |
-| 3 | **Grid view** | `screenshots/03-grid.png` | Grid layout showing multiple games with scale-up selected item |
-| 4 | **Search overlay** | `screenshots/04-search.png` | Animated search panel over darkened background |
-| 5 | **Gameplay** | `screenshots/05-gameplay.png` | A game running in RetroArch fullscreen |
-| 6 | **Carousel transition** | `screenshots/06-transition.gif` | Animated GIF showing the carousel scroll + background crossfade |
-
-Then add to the Screenshots section:
-
-```markdown
-<img src="screenshots/01-splash.png" width="800" alt="Splash Screen"/>
-```
 
 ---
 
