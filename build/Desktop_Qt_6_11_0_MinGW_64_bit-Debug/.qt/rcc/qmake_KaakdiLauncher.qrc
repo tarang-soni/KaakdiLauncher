@@ -1,6 +1,0 @@
-<RCC>
-  <qresource prefix="/qt/qml/KaakdiLauncher">
-    <file alias="qmldir">D:/Dev/Projects/qt/KaakdiLauncher/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/KaakdiLauncher/qmldir</file>
-  </qresource>
-</RCC>
-

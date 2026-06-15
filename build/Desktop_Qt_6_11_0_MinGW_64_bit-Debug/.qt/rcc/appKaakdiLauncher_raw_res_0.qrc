@@ -1,6 +1,0 @@
-<RCC>
-  <qresource prefix="/qt/qml/KaakdiLauncher/">
-    <file alias="Resources.qrc">D:/Dev/Projects/qt/KaakdiLauncher/Resources.qrc</file>
-  </qresource>
-</RCC>
-
