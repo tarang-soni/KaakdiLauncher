@@ -31,6 +31,7 @@ qt_add_qml_module(appKaakdiLauncher
         QML_FILES InfoPopup.qml
         QML_FILES SearchPopup.qml
         SOURCES Config.h Config.cpp
+        QML_FILES GlassPopup.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

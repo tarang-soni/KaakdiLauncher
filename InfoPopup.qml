@@ -2,129 +2,344 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Effects
 import QtQuick.Layouts
+
 Popup  {
-    property color bgColor:Qt.rgba(0,0,0,.8)
-    property color popupColor:Qt.rgba(0.3,0.3,0.3,0.65)
+    id:root
+    property color popupColor:Qt.rgba(1, 1, 1, 0.22)
     property string gameBgPath:""
     property string gameCoverPath:""
+    property int boxRadius:40
     width:parent.width*.8
     height:parent.height*.8
     anchors.centerIn: parent
+    padding:0
     modal: true
-    background: Rectangle {
-        id:popupRoot
-
-        color: popupColor
-        radius:20
-    }
-    Item {
-        id: popupBgMask
-        anchors {
-            top: parent.top
-            left: parent.left
-            right: parent.right
+    enter:Transition{
+        NumberAnimation {
+            properties: "opacity,scale"
+            duration: 200
+            from:0
+            to:1
+            easing.type: Easing.OutCubic
         }
-        layer.enabled: true
-        visible: false
-        height: parent.height / 4
+    }
+    exit:Transition{
+        NumberAnimation {
+            properties: "opacity,scale"
+            duration: 200
+            from:1
+            to:0
+            easing.type: Easing.InCubic
+        }
+    }
+    background:Item{
+        ShaderEffectSource{
+            id:behindCapture
+            anchors.fill: parent
+            sourceItem:root.parent
+            sourceRect:Qt.rect(root.x,root.y,root.width,root.height)
+            live:true
+            hideSource:false
+            visible: false
+        }
+        MultiEffect {
+            anchors.fill: parent
+            source: behindCapture
+
+            // Blur Properties
+            blurEnabled: true
+            blur: 1
+            blurMax: 48
+            blurMultiplier: 0.7
+            saturation: 0.1
+            autoPaddingEnabled: false
+            // Mask Properties
+            maskEnabled: true
+            maskSource: cornerMask
+            maskThresholdMin: 0.5
+            maskSpreadAtMin: 1.0
+
+        }
+
+        Rectangle{
+            id:cornerMask
+            anchors.fill: parent
+            radius:boxRadius
+            layer.enabled: true
+            visible:false
+            layer.smooth: true
+        }
+
+
+        Item
+        {
+            id:bgMask
+            layer.enabled:true
+            visible:false
+            anchors{
+                top:parent.top
+                left:parent.left
+                right:parent.right
+            }
+            height:parent.height*.4
+            Rectangle{
+                anchors.fill: parent
+                radius:boxRadius
+            }
+            Rectangle{
+                anchors{
+                    bottom:parent.bottom
+                    left:parent.left
+                    right:parent.right
+                }
+                height:20
+            }
+        }
+        Item
+        {
+            id:bgMaskBottom
+            layer.enabled:true
+            visible:false
+            anchors{
+                top:bgMask.bottom
+                bottom:parent.bottom
+                left:parent.left
+                right:parent.right
+            }
+            Rectangle{
+                anchors{
+                    top:parent.top
+                    left:parent.left
+                    right:parent.right
+                }
+                height:20
+            }
+            Rectangle{
+                anchors.fill: parent
+                radius:boxRadius
+            }
+
+        }
+        Rectangle {
+            id:upperRect
+            anchors{
+                top:parent.top
+                left:parent.left
+                right:parent.right
+            }
+            height:parent.height*.3
+            //radius: 20
+            color: Qt.rgba(1, 1, 1, 0.0)
+
+
+
+            layer.enabled: true
+            layer.effect: MultiEffect{
+                maskEnabled: true
+                maskSource: bgMask
+            }
+        }
+        Rectangle {
+            anchors{
+                top:upperRect.bottom
+                bottom:parent.bottom
+                left:parent.left
+                right:parent.right
+            }
+            height:parent.height*.4
+            //radius: 20
+            color: popupColor
+
+            layer.enabled: true
+            layer.effect: MultiEffect{
+                maskEnabled: true
+                maskSource: bgMaskBottom
+            }
+        }
         Rectangle {
             anchors.fill: parent
-            radius: 20
-        }
-
-        Rectangle {
-            anchors.bottom: parent.bottom
-            anchors.left: parent.left
-            anchors.right: parent.right
-            height: 20
+            color: "transparent"
+            radius: boxRadius
+            border.width: 1
+            border.color: Qt.rgba(1, 1, 1, 0.3)
         }
     }
 
-    Image{
-        id:topGameDisplayImg
+    RowLayout{
+        id:topSection
         anchors{
             top:parent.top
             left:parent.left
             right:parent.right
-        }
-        source:gameBgPath
-        sourceClipRect: Qt.rect(100, -250, 1300, 1300)
-        height:parent.height/4
-        layer.enabled: true
-        layer.effect: MultiEffect {
-            maskEnabled: true
-            maskSource: popupBgMask
-        }
-        fillMode: Image.PreserveAspectCrop
+            leftMargin:40
+            rightMargin:40
 
-        Rectangle{
-            anchors.fill: parent
-            gradient: Gradient{
-                orientation :Gradient.Horizontal
-                GradientStop{
-                    position:0
-                    color:Qt.rgba(0,0,0,0.9)
-                }
-                GradientStop{
-                    position:1
-                    color:Qt.rgba(0,0,0,0)
-                }
-            }
         }
-        RowLayout{
-            anchors.fill: parent
-            anchors.leftMargin: 40
-            anchors.rightMargin: 40
-            spacing:30
-            //game cover
-            CarouselDelegate{
-                implicitWidth: 150
-                implicitHeight: 150
-                Layout.alignment: Qt.AlignVCenter
-                gameLogo:gameCoverPath
-            }
-            //text and button details
-            ColumnLayout{
+        height:upperRect.height
+
+        spacing:30
+        //game cover
+        CarouselDelegate{
+            radius:boxRadius
+            boxCol:popupColor
+            implicitWidth: 170
+            implicitHeight: 170
+            Layout.alignment: Qt.AlignVCenter
+            gameLogo:gameCoverPath
+        }
+        //text and button details
+        ColumnLayout{
+            //Layout.fillWidth: true
+            Layout.alignment: Qt.AlignVCenter
+            spacing:5
+            Text{
                 Layout.fillWidth: true
-                Layout.alignment: Qt.AlignVCenter
-                spacing:5
-                Text{
-                    Layout.fillWidth: true
-                    text:"Game Name:"
-                    color:Qt.rgba(1,1,1,0.6)
-                    font.pixelSize: 16
-                    font.capitalization: Font.AllUppercase
-                    font.letterSpacing: 1.5
-                }
-                Text{
-                    Layout.fillWidth: true
-                    text:"Mario Kart"
-                    color:"white"
-                    font.pixelSize: 42
-                    font.bold: true
-                    Layout.bottomMargin: 15
+                text:"Game Name:"
+                color:Qt.rgba(1,1,1,0.6)
+                font.pixelSize: 16
+                font.capitalization: Font.AllUppercase
+                font.letterSpacing: 1.5
+            }
+            Text{
+                Layout.fillWidth: true
+                text:"Mario Kart"
+                color:"white"
+                font.pixelSize: 42
+                font.bold: true
+                Layout.bottomMargin: 15
 
-                }
-                Rectangle{
-                    Layout.preferredWidth: 180
-                    Layout.preferredHeight: 45
-                    radius:height/2
-                    color:Qt.rgba(1,1,1,0.6)
-                    border.width: 2
-                    border.color: Qt.rgba(1, 1, 1, 0.5)
-                    Text {
-                        anchors.centerIn: parent
-                        text: "PLAY"
-                        color: "white"
-                        font.pixelSize: 18
-                        font.bold: true
-                        font.letterSpacing: 2
-                    }
+            }
+            Rectangle{
+                Layout.preferredWidth: 200
+                Layout.preferredHeight: 56
+                radius:height/2
+                color:popupColor
+                border.width: 1
+                border.color: Qt.rgba(1, 1, 1, 0.5)
+                Text {
+                    anchors.centerIn: parent
+                    text: "PLAY"
+                    color: "white"
+                    font.pixelSize: 18
+                    font.bold: true
+                    font.letterSpacing: 2
                 }
             }
         }
+        Item{
+            Layout.fillWidth: true
+        }
+        ColumnLayout{
+            // Layout.fillWidth: true
+            Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
+            spacing:5
+            Text{
+                Layout.fillWidth: true
+                text:"Rating:"
+                color:Qt.rgba(1,1,1,0.6)
+                font.pixelSize: 16
+                font.capitalization: Font.AllUppercase
+                horizontalAlignment: Text.AlignRight
+                font.letterSpacing: 1.5
+            }
+            Text{
+                Layout.fillWidth: true
+                text:"9/10"
+                color:"white"
+                font.pixelSize: 42
+                horizontalAlignment: Text.AlignRight
+                font.bold: true
+                Layout.bottomMargin: 15
+
+            }
+        }
     }
-    Overlay.modal: Rectangle {
-        color: bgColor
+    Item{
+        id:bottomSection
+        anchors{
+            top:topSection.bottom
+            bottom:parent.bottom
+            left:parent.left
+            right:parent.right
+        }
+
+        Flickable{
+            id:descArea
+            anchors.fill: parent
+            contentWidth: width
+            contentHeight: contentColumn.implicitHeight
+            clip: true
+                boundsBehavior: Flickable.StopAtBounds
+            ColumnLayout{
+                id: contentColumn
+                width: descArea.width
+
+                Text{
+                    text:"Developer: Tarang Soni"
+                    color:"white"
+                    topPadding: 20
+                    Layout.fillWidth: true
+                    wrapMode: Text.Wrap
+                }
+                Text{
+                    text:"Publisher: Zerorez"
+                    color:"white"
+                    topPadding: 20
+                    Layout.fillWidth: true
+                    wrapMode: Text.Wrap
+                }
+                Text{
+                    text:"Released Date: 20020225T000000"
+                    color:"white"
+                    topPadding: 20
+                    Layout.fillWidth: true
+                    wrapMode: Text.Wrap
+                }
+                Text{
+                    text:"Players: 3"
+                    color:"white"
+                    topPadding: 20
+                    Layout.fillWidth: true
+                    wrapMode: Text.Wrap
+                }
+                Text{
+                    color:"white"
+                    text:"Genre:"
+                    Layout.fillWidth: true
+                    wrapMode: Text.Wrap
+                }
+                ListView{
+                    Layout.fillWidth: true
+                    Layout.preferredHeight: 50
+                    model:4
+                    clip: true
+                    delegate:Rectangle{
+                        width:90
+                        height:50
+                        color:Qt.rgba(1,1,1,0.5)
+                        radius: 5
+                    }
+                    spacing:20
+                    orientation:ListView.Horizontal
+                }
+                Text{
+                    color:"white"
+                    text:"Description:"
+                    Layout.fillWidth: true
+                    wrapMode: Text.Wrap
+                }
+                Text{
+                    Layout.fillWidth: true
+                    wrapMode: Text.Wrap
+                    color:"white"
+                    text:"Tired of endlessly doing battle with meddling bandicoots, the nefarious Dr. Neo Cortex shrinks the entire Earth, and Crash and Coco along with it, to the size of a wumpa fruit. Luckily, Coco invents a machine to reverse the effects, but she needs crystals from around the world to power it. Crash must retrieve the crystals to help return the entire planet to its natural state. Experience Crash's biggest adventure yet, with gameplay modes ranging from side-scrolling to 3D chase levels to aerial dogfight combat sequences. Battle your way through over 20 huge levels and six unique locations to defeat Cortex and save the world."
+                }
+                Item { height: 20 }
+
+            }
+        }
     }
+
+
+
 }

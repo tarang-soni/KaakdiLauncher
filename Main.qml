@@ -140,6 +140,7 @@ Window {
            id:infoPopup
            gameBgPath: "file:///" + UIManager.basePath + "/" + root.currGameObj.bg;
            gameCoverPath:"file:///" + UIManager.basePath + "/" + root.currGameObj.logo;
+
         }
 
         SearchPopup{
@@ -175,5 +176,6 @@ Window {
             }
 
         }
+
     }
 }
