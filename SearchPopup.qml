@@ -31,10 +31,11 @@ Item{
 
     }
     ColumnLayout{
-        anchors.fill: parent
-        anchors.topMargin: 60
+        //anchors.fill: parent
+        anchors.centerIn:parent
         spacing: 20
-
+        width:parent.width*0.6
+        height:parent.height*0.7
         TextField{
             id:searchBar
             Layout.preferredWidth:boxWidth

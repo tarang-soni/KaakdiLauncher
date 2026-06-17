@@ -15,7 +15,7 @@ Window {
     property string oldImageUrl: "qrc:/Images/wallpaperflare.com_wallpaper.jpg"
     property string currImageUrl: "qrc:/Images/wallpaperflare.com_wallpaper.jpg"
     property string gameName: "None"
-
+    property var currGameObj
     SplashScreen{
         id:splashBG
     }
@@ -116,6 +116,7 @@ Window {
                 onUpdateTimer:(gameObj)=>{
 
                     bgUpdateTimer.pendingGameObj=gameObj;
+                    root.currGameObj = gameObj
                     bgUpdateTimer.restart();
                 }
                 onRequestPlayGame: ()=>{
@@ -137,6 +138,8 @@ Window {
 
         InfoPopup{
            id:infoPopup
+           gameBgPath: "file:///" + UIManager.basePath + "/" + root.currGameObj.bg;
+           gameCoverPath:"file:///" + UIManager.basePath + "/" + root.currGameObj.logo;
         }
 
         SearchPopup{

@@ -64,6 +64,7 @@ RowLayout {
             Layout.preferredWidth: 50
             Layout.preferredHeight: 50
             ButtonGroup.group: navGroup
+            isGroupButton: false
             iconPath:"qrc:/Images/icons8-settings-64.png"
             onMenuSelected:settingsButton()
         }
