@@ -30,6 +30,7 @@ qt_add_qml_module(appKaakdiLauncher
         QML_FILES GridFrame.qml
         QML_FILES InfoPopup.qml
         QML_FILES SearchPopup.qml
+        SOURCES Config.h Config.cpp
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
@@ -46,7 +47,7 @@ set_target_properties(appKaakdiLauncher PROPERTIES
 target_link_libraries(appKaakdiLauncher
     PRIVATE Qt6::Quick Qt6::Xml
 )
-
+file(COPY "config/config.json" DESTINATION "config")
 install(TARGETS appKaakdiLauncher
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}

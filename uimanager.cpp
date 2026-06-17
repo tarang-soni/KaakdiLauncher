@@ -1,6 +1,6 @@
 #include "uimanager.h"
 #include<QCoreApplication>
-
+#include "Config.h"
 static UIManager* m_object = nullptr;
 UIManager::UIManager(QObject *parent)
     : QObject{parent}
@@ -24,7 +24,11 @@ void UIManager::playGame(QString data)
     QDir coreDir(corePath);
 
     QStringList filters;
-    filters << "*.dll";
+    #if defined(Q_OS_LINUX)
+        filters<<"*.so";
+    #elif defined(Q_OS_WIN)
+        filters << "*.dll";
+    #endif
     coreDir.setNameFilters(filters);
     coreDir.setFilter(QDir::Files);
 
@@ -50,8 +54,8 @@ void UIManager::playGame(QString data)
     arguments << "-f"                     // Fullscreen
               << "-L" << fullCorePath     // Load Core
               << gamePath;                // Load Game
-
-    QProcess::startDetached(retroarchPath, arguments);
+    QString path = Config::instance()["retroarch_path"].toString();
+    QProcess::startDetached(path, arguments);
 }
 
 void UIManager::registerClass()

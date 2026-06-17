@@ -31,8 +31,6 @@ signals:
 public slots:
     void initCarousel(QJsonDocument doc);
 private:
-    const QString retroarchPath = "C:\\RetroArch-Win64\\retroarch.exe";
-
 
     QString m_basePath;
     QVariantList m_currentGamesList;
