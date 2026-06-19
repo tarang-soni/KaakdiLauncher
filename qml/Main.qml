@@ -12,8 +12,8 @@ Window {
     visible: true
     title: qsTr("Hello World")
     property string gameDataPath: ""
-    property string oldImageUrl: "qrc:/Images/wallpaperflare.com_wallpaper.jpg"
-    property string currImageUrl: "qrc:/Images/wallpaperflare.com_wallpaper.jpg"
+    property string oldImageUrl: "qrc:/assets/Images/wallpaperflare.com_wallpaper.jpg"
+    property string currImageUrl: "qrc:/assets/Images/wallpaperflare.com_wallpaper.jpg"
     property string gameName: "None"
     property var currGameObj
     SplashScreen{

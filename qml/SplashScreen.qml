@@ -8,7 +8,7 @@ Rectangle{
         id:splashLogo
         anchors.centerIn: parent
         sourceSize.height: 350
-        source:"qrc:/Images/logo.png"
+        source:"qrc:/assets/Images/logo.png"
         rotation:0
 
         SequentialAnimation on rotation{

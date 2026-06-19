@@ -23,7 +23,7 @@ RowLayout {
             onMenuSelected:homeButton()
             ButtonGroup.group: navGroup
             checked:true
-            iconPath:"qrc:/Images/icons8-home-page-64.png"
+            iconPath:"qrc:/assets/Images/icons8-home-page-64.png"
         }
         NavButtonDelegate {
             id:gridBtn
@@ -31,7 +31,7 @@ RowLayout {
             Layout.preferredHeight: 50
             ButtonGroup.group: navGroup
             onMenuSelected:gridMenuButton()
-            iconPath:"qrc:/Images/icons8-grid-90.png"
+            iconPath:"qrc:/assets/Images/icons8-grid-90.png"
         }
         NavButtonDelegate {
             id:searchBtn
@@ -39,7 +39,7 @@ RowLayout {
             Layout.preferredHeight: 50
             onMenuSelected: searchButton()
             isGroupButton: false
-            iconPath:"qrc:/Images/icons8-search-64.png"
+            iconPath:"qrc:/assets/Images/icons8-search-64.png"
         }
     }
     Item {
@@ -57,7 +57,7 @@ RowLayout {
             Layout.preferredWidth: 50
             Layout.preferredHeight: 50
             ButtonGroup.group: navGroup
-            iconPath:"qrc:/Images/icons8-power-off-button-64.png"
+            iconPath:"qrc:/assets/Images/icons8-power-off-button-64.png"
         }
         NavButtonDelegate {
             id:settingsBtn
@@ -65,7 +65,7 @@ RowLayout {
             Layout.preferredHeight: 50
             ButtonGroup.group: navGroup
             isGroupButton: false
-            iconPath:"qrc:/Images/icons8-settings-64.png"
+            iconPath:"qrc:/assets/Images/icons8-settings-64.png"
             onMenuSelected:settingsButton()
         }
 

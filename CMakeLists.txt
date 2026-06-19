@@ -9,29 +9,29 @@ find_package(Qt6 REQUIRED COMPONENTS Quick Xml)
 qt_standard_project_setup(REQUIRES 6.10)
 
 qt_add_executable(appKaakdiLauncher
-    main.cpp
+    src/main.cpp
 )
 
 qt_add_qml_module(appKaakdiLauncher
     URI KaakdiLauncher
     QML_FILES
-        Main.qml
+        qml/Main.qml
         RESOURCES Resources.qrc
-        SOURCES uimanager.h uimanager.cpp
-        SOURCES librarymanager.h librarymanager.cpp
-        SOURCES GameFileObj.h
-        SOURCES appcore.h appcore.cpp
-        QML_FILES ArcadeFrame.qml
-        QML_FILES SplashScreen.qml
-        QML_FILES CarouselDelegate.qml
-        QML_FILES GameCarousel.qml
-        QML_FILES TopNavBar.qml
-        QML_FILES NavButtonDelegate.qml
-        QML_FILES GridFrame.qml
-        QML_FILES InfoPopup.qml
-        QML_FILES SearchPopup.qml
-        SOURCES Config.h Config.cpp
-        QML_FILES GlassPopup.qml
+        SOURCES src/uimanager.h src/uimanager.cpp
+        SOURCES src/librarymanager.h src/librarymanager.cpp
+        SOURCES src/GameFileObj.h
+        SOURCES src/appcore.h src/appcore.cpp
+        QML_FILES qml/ArcadeFrame.qml
+        QML_FILES qml/SplashScreen.qml
+        QML_FILES qml/CarouselDelegate.qml
+        QML_FILES qml/GameCarousel.qml
+        QML_FILES qml/TopNavBar.qml
+        QML_FILES qml/NavButtonDelegate.qml
+        QML_FILES qml/GridFrame.qml
+        QML_FILES qml/InfoPopup.qml
+        QML_FILES qml/SearchPopup.qml
+        SOURCES src/Config.h src/Config.cpp
+        QML_FILES qml/GlassPopup.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
